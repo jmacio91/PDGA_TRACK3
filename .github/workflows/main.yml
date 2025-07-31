@@ -29,7 +29,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Run PDGA tracker
-        run: python pdga_check.py
+        run: python Tracker.py
         env:
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
           PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
