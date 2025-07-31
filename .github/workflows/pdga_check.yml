@@ -31,6 +31,12 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests beautifulsoup4
+        
+      - name: Print UTC timestamp
+        run: date -u
+
+      - name: Echo test message
+        run: echo "Hello from the scheduler!"
 
       - name: Run PDGA tracker
         run: python Tracker.py
