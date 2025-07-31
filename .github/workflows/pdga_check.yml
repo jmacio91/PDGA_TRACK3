@@ -2,8 +2,8 @@ name: Tracker
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Run every hour
-    #- cron: '*/5 * * * *'
+    #- cron: '0 * * * *'  # Run every hour
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
