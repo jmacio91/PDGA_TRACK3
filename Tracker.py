@@ -105,7 +105,7 @@ def run_check():
     last_known = load_value(LAST_KNOWN_FILE)
     last_milestone = load_value(LAST_MILESTONE_FILE)
 
-    crossed = [m for m in milestones if last_known < m <= latest and m > last_milestone]
+    crossed = [m for m in milestones if last_known < m <= latest and m < last_milestone]
     if crossed:
         newest = max(crossed)
         if newest >= 314130:
