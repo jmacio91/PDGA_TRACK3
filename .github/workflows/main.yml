@@ -1,4 +1,4 @@
-name: PDGA Registration Tracker
+name: Tracker
 
 on:
   schedule:
