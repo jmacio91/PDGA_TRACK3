@@ -21,7 +21,12 @@ state_branch = "state"
 
 def get_latest_pdga_number():
     url = "https://www.pdga.com/players?order=PDGANum&sort=desc"
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "Cache-Control": "no-cache"
+    }
+    response = requests.get(url, headers=headers, params={"t": datetime.utcnow().timestamp()})
     soup = BeautifulSoup(response.text, 'html.parser')
 
     rows = soup.select("table.views-table tbody tr")
@@ -41,6 +46,7 @@ def get_latest_pdga_number():
     except ValueError:
         print(f"Invalid number in PDGA column: {pdga_number}")
         return None
+
 
 def send_pushover(message):
     if not (PUSHOVER_USER_KEY and PUSHOVER_API_TOKEN):
