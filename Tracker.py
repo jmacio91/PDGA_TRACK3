@@ -8,7 +8,7 @@ PUSHOVER_USER_KEY = os.environ.get("PUSHOVER_USER_KEY")
 PUSHOVER_API_TOKEN = os.environ.get("PUSHOVER_API_TOKEN")
 
 # Define milestones
-milestones = list(range(314100, 314140, 2)) + list(range(314141, 314159, 1))
+milestones = list(range(314100, 314140, 2)) + list(range(314140, 314160, 1))
 
 # Paths to local state files
 LAST_KNOWN_FILE = "last_known.txt"
